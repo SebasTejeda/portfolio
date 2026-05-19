@@ -38,7 +38,6 @@ export class ContactComponent {
   copyEmail(): void {
     const email = this.contactInfo().email;
     navigator.clipboard.writeText(email).then(() => {
-      alert(`Email copiado: ${email}`);
     }).catch(err => {
       console.error('Error al copiar email:', err);
     });
