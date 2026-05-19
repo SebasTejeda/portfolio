@@ -1,0 +1,55 @@
+<section id="skills" class="skills">
+  <div class="skills__container">
+    <!-- Section Header -->
+    <div class="skills__header">
+      <span class="skills__label">Mi Stack Tecnológico</span>
+      <h2 class="skills__title">Habilidades</h2>
+      <p class="skills__subtitle">
+        Tecnologías y herramientas con las que trabajo diariamente
+      </p>
+    </div>
+    
+    <!-- Skills Grid -->
+    <div class="skills__grid">
+      @for (group of skillGroups(); track group.category) {
+        <div class="skills__group">
+          <!-- Group Header -->
+          <div class="skills__group-header">
+            <h3 class="skills__group-title">{{ group.title }}</h3>
+            <span class="skills__group-count">{{ group.skills.length }}</span>
+          </div>
+          
+          <!-- Skills List with Logos -->
+          <div class="skills__list">
+            @for (skill of group.skills; track skill.name) {
+              <div class="skills__item">
+                <img 
+                  [src]="getSkillLogo(skill.name)" 
+                  [alt]="skill.name + ' logo'"
+                  class="skills__logo"
+                  loading="lazy">
+                <span class="skills__name">{{ skill.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+    
+    <!-- Stats -->
+    <div class="skills__stats">
+      <div class="skills__stat">
+        <span class="skills__stat-value">{{ totalSkills() }}+</span>
+        <span class="skills__stat-label">Tecnologías</span>
+      </div>
+      <div class="skills__stat">
+        <span class="skills__stat-value">Full Stack</span>
+        <span class="skills__stat-label">Especialización</span>
+      </div>
+      <div class="skills__stat">
+        <span class="skills__stat-value">Aprendizaje</span>
+        <span class="skills__stat-label">Continuo</span>
+      </div>
+    </div>
+  </div>
+</section>

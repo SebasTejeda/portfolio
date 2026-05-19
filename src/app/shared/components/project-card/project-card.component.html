@@ -1,0 +1,63 @@
+<div class="project-card">
+  <!-- Featured badge -->
+  @if (project().featured) {
+    <div class="project-card__featured">
+      <svg class="project-card__star-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="currentColor"/>
+      </svg>
+      <span>Destacado</span>
+    </div>
+  }
+  
+  <!-- Image -->
+  <div class="project-card__image">
+    <img 
+      [src]="project().imageUrl" 
+      [alt]="project().title"
+      loading="lazy">
+    <div class="project-card__overlay">
+      <div class="project-card__category">
+        {{ project().category }}
+      </div>
+    </div>
+  </div>
+  
+  <!-- Content -->
+  <div class="project-card__content">
+    <h3 class="project-card__title">{{ project().title }}</h3>
+    <p class="project-card__description">{{ project().description }}</p>
+    
+    <!-- Technologies -->
+    <div class="project-card__technologies">
+      @for (tech of project().technologies; track tech) {
+        <app-skill-badge [name]="tech" />
+      }
+    </div>
+    
+    <!-- Actions -->
+    <div class="project-card__actions">
+      @if (project().demoUrl) {
+        <button 
+          class="project-card__btn project-card__btn--primary"
+          (click)="onViewDemo()">
+          <svg class="project-card__btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" fill="currentColor"/>
+          </svg>
+          Ver Demo
+        </button>
+      }
+      
+      @if (project().githubUrl) {
+        <button 
+          class="project-card__btn project-card__btn--secondary"
+          (click)="onViewGithub()">
+          <img 
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" 
+            alt="GitHub"
+            class="project-card__btn-icon">
+          GitHub
+        </button>
+      }
+    </div>
+  </div>
+</div>

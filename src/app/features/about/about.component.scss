@@ -1,0 +1,134 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.about {
+  padding: 6rem 0;
+  background: var(--color-background);
+  
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  // Header
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  &__label {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+  
+  &__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 0;
+  }
+  
+  // Content
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+  
+  // Text Column
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  &__paragraph {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin: 0;
+    
+    strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+    
+    &--highlight {
+      padding: 1.25rem;
+      background: rgba(37, 99, 235, 0.08);
+      border-left: 3px solid var(--color-primary);
+      border-radius: 0.5rem;
+      color: var(--color-text);
+    }
+  }
+  
+  // Highlights Cards
+  &__highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  &__card {
+    padding: 1.75rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateX(8px);
+      border-color: var(--color-accent);
+      box-shadow: 0 8px 24px rgba(6, 182, 212, 0.15);
+    }
+  }
+  
+&__card-icon {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+  object-fit: contain;
+}
+  
+  &__card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 0.5rem;
+  }
+  
+  &__card-description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 0;
+    
+    &__container {
+      padding: 0 1.5rem;
+    }
+    
+    &__header {
+      margin-bottom: 2.5rem;
+    }
+  }
+}

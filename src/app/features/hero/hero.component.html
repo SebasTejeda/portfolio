@@ -1,0 +1,70 @@
+<section id="home" class="hero">
+  <div class="hero__container">
+    <div class="hero__content">
+      <!-- Greeting -->
+      <p class="hero__greeting">Hola, soy</p>
+      
+      <!-- Name -->
+      <h1 class="hero__name">
+        <span class="hero__name-line">Sebastián Isaías</span>
+        <span class="hero__name-line hero__name-line--accent">Tejeda Flores</span>
+      </h1>
+      
+      <!-- Role -->
+      <h2 class="hero__role">
+        <span class="hero__tag">&lt;</span>
+        Desarrollador Web Fullstack
+        <span class="hero__tag">/&gt;</span>
+      </h2>
+      
+      <!-- Description -->
+      <p class="hero__description">
+        Estudiante de 9no ciclo de Ingeniería de Sistemas en la UPC. Me apasiona crear 
+        soluciones web intuitivas y eficientes, con enfoque en UI/UX y desarrollo fullstack. 
+        Especializado en Angular, TypeScript y arquitecturas escalables.
+      </p>
+      
+      <!-- CTA Buttons -->
+      <div class="hero__actions">
+        <app-button 
+          variant="primary" 
+          size="lg"
+          (clicked)="scrollToProjects()">
+          Ver Proyectos
+        </app-button>
+        
+        <app-button 
+          variant="outline" 
+          size="lg"
+          (clicked)="downloadCV()">
+          Descargar CV
+        </app-button>
+      </div>
+      
+      <!-- Tech Keywords -->
+      <div class="hero__keywords">
+        <span class="hero__keyword">Angular</span>
+        <span class="hero__divider">•</span>
+        <span class="hero__keyword">TypeScript</span>
+        <span class="hero__divider">•</span>
+        <span class="hero__keyword">Python</span>
+        <span class="hero__divider">•</span>
+        <span class="hero__keyword">PostgreSQL</span>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="hero__scroll">
+      <div class="hero__scroll-indicator">
+        <span>↓</span>
+      </div>
+      <span class="hero__scroll-text">Scroll</span>
+    </div>
+  </div>
+  
+  <!-- Background elements -->
+  <div class="hero__bg">
+    <div class="hero__bg-gradient"></div>
+    <div class="hero__bg-grid"></div>
+  </div>
+</section>

@@ -1,0 +1,217 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.projects {
+  padding: 6rem 0;
+  background: var(--color-background);
+  
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  // Header
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  &__label {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+  
+  &__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 0 0 0.75rem;
+  }
+  
+  &__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  // Sections
+  &__featured,
+  &__all {
+    margin-bottom: 4rem;
+  }
+  
+  &__section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  &__star {
+    font-size: 1.75rem;
+  }
+  
+  // Grid
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    
+    &--featured {
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    }
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+  
+  &__cta-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  filter: brightness(0) invert(1); // Para que sea blanco
+}
+  // Empty State
+  &__empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--color-surface);
+    border: 2px dashed var(--color-border);
+    border-radius: 1rem;
+  }
+  
+  &__empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  
+  &__empty-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 0.5rem;
+  }
+  
+  &__empty-subtext {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+  
+  // Stats
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 3rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  &__stat {
+    text-align: center;
+  }
+  
+  &__stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+  
+  &__stat-label {
+    display: block;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  // CTA
+  &__cta {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.1) 0%,
+      rgba(6, 182, 212, 0.1) 100%
+    );
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+  }
+  
+  &__cta-text {
+    font-size: 1.125rem;
+    color: var(--color-text);
+    margin: 0 0 1.5rem;
+  }
+  
+&__cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--color-primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.3);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .projects {
+    padding: 4rem 0;
+    
+    &__container {
+      padding: 0 1.5rem;
+    }
+    
+    &__header {
+      margin-bottom: 2.5rem;
+    }
+    
+    &__featured,
+    &__all {
+      margin-bottom: 2.5rem;
+    }
+    
+    &__stats {
+      padding: 2rem;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    &__cta {
+      padding: 2rem 1.5rem;
+    }
+  }
+}
+}

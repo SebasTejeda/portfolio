@@ -1,0 +1,33 @@
+<nav class="navbar" [class.navbar--scrolled]="isScrolled()">
+  <div class="navbar__container">
+    <!-- Logo / Brand -->
+    <a href="#home" class="navbar__brand" (click)="scrollToSection('#home')">
+      <span class="navbar__logo">&lt;ST /&gt;</span>
+      <span class="navbar__name">Sebastian Tejeda</span>
+    </a>
+    
+    <!-- Navigation Links -->
+    <ul class="navbar__links">
+      @for (link of navLinks; track link.href) {
+        <li class="navbar__item">
+          <a 
+            [href]="link.href" 
+            class="navbar__link"
+            (click)="scrollToSection(link.href)">
+            {{ link.label }}
+          </a>
+        </li>
+      }
+    </ul>
+    
+    <!-- CTA Button -->
+    <div class="navbar__actions">
+      <a 
+        href="#contact" 
+        class="navbar__cta"
+        (click)="scrollToSection('#contact')">
+        Contactar
+      </a>
+    </div>
+  </div>
+</nav>

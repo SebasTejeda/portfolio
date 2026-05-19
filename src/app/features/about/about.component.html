@@ -1,0 +1,58 @@
+<section id="about" class="about">
+  <div class="about__container">
+    <!-- Section Header -->
+    <div class="about__header">
+      <span class="about__label">Conóceme</span>
+      <h2 class="about__title">Sobre Mí</h2>
+    </div>
+    
+    <!-- Content Grid -->
+    <div class="about__content">
+      <!-- Main Text -->
+<div class="about__text">
+  <p class="about__paragraph">
+    Soy <strong>Sebastián Isaías Tejeda Flores</strong>, estudiante de 9no ciclo de 
+    Ingeniería de Sistemas de Información en la Universidad Peruana de Ciencias Aplicadas (UPC).
+  </p>
+  
+  <p class="about__paragraph">
+    Me apasiona el <strong>desarrollo web</strong> porque disfruto encontrar soluciones 
+    a problemas técnicos y crear interfaces detalladas que brinden una excelente experiencia 
+    de usuario. Mi enfoque combina funcionalidad con diseño, priorizando siempre la 
+    <strong>calidad visual y la usabilidad</strong>.
+  </p>
+  
+  <p class="about__paragraph">
+    Tengo experiencia en <strong>desarrollo fullstack</strong> con Angular, TypeScript, 
+    Python (FastAPI) y bases de datos relacionales y no relacionales. Me especializo en 
+    <strong>UI/UX</strong>, automatización de procesos y análisis de datos. Aprendo 
+    constantemente a través de tutoriales, cursos (Coursera, EdTeam) y construyendo 
+    aplicaciones reales.
+  </p>
+  
+  <p class="about__paragraph about__paragraph--highlight">
+    Actualmente busco <strong>prácticas preprofesionales</strong> donde pueda aportar 
+    mis habilidades técnicas, aprender nuevas tecnologías y colaborar en proyectos 
+    desafiantes. Disponibilidad de <strong>medio tiempo y fines de semana</strong>, 
+    modalidad presencial o remota.
+  </p>
+</div>
+      
+      <!-- Highlights Cards -->
+<!-- Highlights Cards -->
+<div class="about__highlights">
+  @for (highlight of highlights; track highlight.title) {
+    <div class="about__card">
+      <img 
+        [src]="highlight.icon" 
+        [alt]="highlight.title"
+        class="about__card-icon"
+        loading="lazy">
+      <h3 class="about__card-title">{{ highlight.title }}</h3>
+      <p class="about__card-description">{{ highlight.description }}</p>
+    </div>
+  }
+</div>
+    </div>
+  </div>
+</section>

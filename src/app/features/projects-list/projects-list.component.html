@@ -1,0 +1,88 @@
+<section id="projects" class="projects">
+  <div class="projects__container">
+    <!-- Section Header -->
+    <div class="projects__header">
+      <span class="projects__label">Mi Trabajo</span>
+      <h2 class="projects__title">Proyectos</h2>
+      <p class="projects__subtitle">
+        Proyectos que he construido aplicando tecnologías fullstack y buenas prácticas de desarrollo
+      </p>
+    </div>
+    
+    <!-- Featured Projects -->
+    @if (featuredProjects().length > 0) {
+      <div class="projects__featured">
+        <h3 class="projects__section-title">
+          <span class="projects__star">⭐</span>
+          Proyectos Destacados
+        </h3>
+        
+        <div class="projects__grid projects__grid--featured">
+          @for (project of featuredProjects(); track project.id) {
+            <app-project-card 
+              [project]="project"
+              (viewDemo)="onViewDemo($event)"
+              (viewGithub)="onViewGithub($event)" />
+          }
+        </div>
+      </div>
+    }
+    
+    <!-- All Projects -->
+    <div class="projects__all">
+      @if (featuredProjects().length > 0) {
+        <h3 class="projects__section-title">Todos los Proyectos</h3>
+      }
+      
+      <div class="projects__grid">
+        @for (project of projects(); track project.id) {
+          <app-project-card 
+            [project]="project"
+            (viewDemo)="onViewDemo($event)"
+            (viewGithub)="onViewGithub($event)" />
+        } @empty {
+          <div class="projects__empty">
+            <p class="projects__empty-icon">📂</p>
+            <p class="projects__empty-text">No hay proyectos disponibles</p>
+            <p class="projects__empty-subtext">Agrega proyectos en el ProjectsService</p>
+          </div>
+        }
+      </div>
+    </div>
+    
+    <!-- Stats Footer -->
+    <div class="projects__stats">
+      <div class="projects__stat">
+        <span class="projects__stat-value">{{ projectCount() }}</span>
+        <span class="projects__stat-label">Proyectos Completados</span>
+      </div>
+      <div class="projects__stat">
+        <span class="projects__stat-value">{{ featuredProjects().length }}</span>
+        <span class="projects__stat-label">Destacados</span>
+      </div>
+      <div class="projects__stat">
+        <span class="projects__stat-value">100%</span>
+        <span class="projects__stat-label">Código Propio</span>
+      </div>
+    </div>
+    
+    <!-- CTA -->
+<!-- CTA -->
+<div class="projects__cta">
+  <p class="projects__cta-text">
+    ¿Quieres ver más? Visita mi GitHub para explorar el código fuente
+  </p>
+  <a 
+    href="https://github.com/SebasTejeda" 
+    target="_blank"
+    rel="noopener noreferrer"
+    class="projects__cta-button">
+    <img 
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" 
+      alt="GitHub"
+      class="projects__cta-icon">
+    Ver GitHub Completo
+  </a>
+</div>
+  </div>
+</section>
