@@ -7,7 +7,7 @@ import { ContactInfo, SocialIcon, SocialLink } from '../models/contact.interface
 export class ContactService {
   // Signal con información de contacto
 private contactInfoSignal = signal<ContactInfo>({
-  email: 'u20191a458@upc.edu.pe',
+  email: 'tejedasebastian129@gmail.com',
   location: 'Lima, Perú',
   socialLinks: [
     {
@@ -22,7 +22,7 @@ private contactInfoSignal = signal<ContactInfo>({
     },
     {
       name: 'Email',
-      url: 'mailto:u20191a458@upc.edu.pe',
+      url: 'mailto:tejedasebastian129@gmail.com',
       icon: SocialIcon.EMAIL
     }
   ]
